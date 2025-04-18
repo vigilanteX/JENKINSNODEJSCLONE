@@ -1,1 +1,1 @@
-console.log("hello from jenkins git XZ22")
+console.log("hello from jenkins git hook1931")
