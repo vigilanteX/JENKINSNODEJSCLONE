@@ -24,10 +24,11 @@ pipeline {
         }
         stage('PROD'){
             steps{
-                echo 'PROD ENV DEPLOYED'
+                echo 'PROD ENV DEPLOYING'
                 script{
-                 def name='Aman'
-                 echo "Hello from $name"
+                 powershell '''
+                  node demo.js
+                 '''
                     
                 }
 
