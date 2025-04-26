@@ -1,39 +1,20 @@
 pipeline {
     agent any
-
     stages {
-        stage('Dev') {
+        stage("dev") {
             steps {
-                echo 'DEV ENV DEPLOYED'
-                powershell'''
-                $name="Aman"
-                Write-Host "Mellow $name"
-                
-                '''
+                powershell '''Write-Host "DEV BUILD STARTED"'''
             }
         }
-        stage('SIT'){
-            steps{
-                echo 'SIT ENV DEPLOYED'
+        stage("sit") {
+            steps {
+                powershell '''Write-Host "SIT BUILD STARTED"'''
             }
         }
-        stage('UAT'){
-            steps{
-                echo 'UAT ENV DEPLOYED'
-            }
-        }
-        stage('PROD'){
-            steps{
-                echo 'PROD ENV DEPLOYING'
-                script{
-                 powershell '''
-                  node demo.js
-                 '''
-                    
-                }
-
+        stage("uat") {
+            steps {
+                powershell '''Write-Host "UAT BUILD STARTED"'''
             }
         }
     }
 }
-
